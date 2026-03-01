@@ -267,6 +267,7 @@ footer {
       font-weight: 300;
       font-size: 10vw;
       mix-blend-mode: color-dodge;
+      padding-left: 3.2vw;
       color: #c7c7c7;
       animation: infiniteText 16s linear infinite;
     }
