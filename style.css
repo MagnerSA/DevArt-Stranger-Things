@@ -11,12 +11,24 @@
   font-style: normal;
 }
 
+html {
+  height: 100%;
+}
+#smooth-wrapper {
+  overflow: hidden;
+}
+
+#smooth-content {
+  min-height: 100vh;
+}
+
 body {
   background-color: #000000;
   color: rgb(255, 255, 255, 0.8);
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   overflow-x: hidden;
+  height: 100%;
 }
 
 header {
@@ -42,14 +54,42 @@ button {
 }
 
 .hero {
-  background-image: url(images/hero.webp);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   height: 100vh;
   display: flex;
   justify-content: space-between;
   padding: 200px 10vw 0 10vw;
+  position: relative;
+
+  .gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 70%);
+    z-index: -1;
+  }
+
+  .images {
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -2;
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      z-index: -1;
+    }
+  }
 
   .title,
   .extra {
@@ -85,6 +125,9 @@ button {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-color: black;
+  z-index: 2;
+  position: relative;
 
   .cities {
     padding: 0px 10vw;
@@ -162,7 +205,7 @@ button {
       display: flex;
       flex-direction: column;
       gap: 16px;
-      font-size: 14px;
+      font-size: 16px;
       text-align: justify;
       justify-content: end;
       div {
@@ -277,5 +320,172 @@ footer {
 @keyframes infiniteText {
   100% {
     transform: translateX(-100%);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    color: rgb(255, 255, 255, 0.8);
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+  .middle .cities .cities-list {
+    flex-direction: column;
+    align-items: center;
+    .city-1,
+    .city-2,
+    .city-3 {
+      flex-direction: column;
+      max-width: 500px;
+      width: 100%;
+      display: flex;
+      flex: 1;
+      aspect-ratio: 16/9;
+      background-size: cover;
+      background-position: center;
+      align-items: start;
+      justify-content: space-between;
+      padding: 16px;
+      h3 {
+        font-size: 3vw;
+      }
+      p {
+        font-size: 2vw;
+      }
+    }
+  }
+
+  .middle .logos {
+    padding: 100px 10vw 0 10vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* height: 120px; */
+    .logo1,
+    .logo3 {
+      width: 12vw;
+    }
+    .logo2 {
+      width: 16vw;
+    }
+  }
+
+  .middle .testimonials {
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+    .testimonial-1,
+    .testimonial-2,
+    .testimonial-3 {
+      gap: 16px;
+      text-align: center;
+      align-items: center;
+
+      width: 60%;
+      div {
+        display: flex;
+        justify-content: center;
+        height: 50px;
+        width: 100%;
+      }
+      img {
+        height: 100%;
+        width: auto;
+      }
+    }
+  }
+
+  .middle .thanks {
+    padding: 100px 10vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 32px;
+
+    ul {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      list-style-type: none;
+      justify-content: center;
+      font-size: 16px;
+      flex: 1;
+      div {
+        width: 100%;
+      }
+    }
+  }
+
+  footer {
+    gap: 16px;
+
+    .footer-top {
+      padding: 60px 10vw 0 10vw;
+
+      .title {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        h1 {
+          font-size: 4vw;
+        }
+        p {
+          letter-spacing: 3px;
+          font-size: 12px;
+        }
+      }
+
+      .social-media {
+        p {
+          font-size: 1.6vw;
+        }
+        .links {
+          gap: 1vw;
+          img {
+            width: 3vw;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+      align-items: center;
+      padding: 32vw 0 10vw 0;
+
+      .title {
+        text-align: center;
+        align-items: center;
+        h1 {
+          font-size: 8vw;
+          text-align: center;
+        }
+        p {
+          font-size: 3vw;
+          line-height: 4vw;
+          text-align: center;
+        }
+      }
+      .extra {
+        width: 60%;
+        text-align: center;
+        align-items: center;
+        gap: 16px;
+        .text {
+          font-size: 3.2vw;
+          line-height: 4vw;
+          text-align: center;
+        }
+      }
+    }
+
+    .middle .cities .cities-title {
+      display: none;
+    }
   }
 }
