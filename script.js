@@ -42,10 +42,19 @@ gsap.from(".thanks li", {
   stagger: 0.3,
   scrollTrigger: {
     trigger: ".thanks ",
-
     start: "0% 80%",
     end: "100% 80%",
-    markers: true,
     scrub: true,
+  },
+});
+
+gsap.from("footer", {
+  y: -200,
+  immediateRender: false,
+  scrollTrigger: {
+    trigger: "footer",
+    end: "100% 100%",
+    scrub: true,
+    invalidateOnRefresh: true,
   },
 });
