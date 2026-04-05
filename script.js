@@ -75,7 +75,6 @@ function animatePage() {
         trigger: text,
         start: "0% 80%",
         end: "100% 80%",
-        markers: true,
       },
     });
   });
