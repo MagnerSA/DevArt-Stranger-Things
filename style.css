@@ -11,6 +11,30 @@
   font-style: normal;
 }
 
+#preloader {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: #1b0202;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    width: 48vw;
+    height: auto;
+
+    path {
+      fill: #cf292925;
+      stroke: #cf2929;
+      stroke-width: 4;
+      stroke-dasharray: 4000;
+      stroke-dashoffset: 4000;
+    }
+  }
+}
+
 html {
   height: 100%;
 }
