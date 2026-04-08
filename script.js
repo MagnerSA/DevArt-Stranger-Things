@@ -73,8 +73,8 @@ function animatePage() {
       stagger: 0.03,
       scrollTrigger: {
         trigger: text,
-        start: "0% 80%",
-        end: "100% 80%",
+        start: "0% 90%",
+        end: "100% 90%",
       },
     });
   });
@@ -99,3 +99,19 @@ timeline.to("#preloader path", {
 
   duration: 2,
 });
+
+// let split;
+
+// function createSplit() {
+//   if (split) split.revert(); // 👈 remove split anterior
+
+//   split = new SplitText(".text", {
+//     type: "lines, words",
+//   });
+
+//   animatePage();
+// }
+
+// window.addEventListener("resize", () => {
+//   createSplit();
+// });
